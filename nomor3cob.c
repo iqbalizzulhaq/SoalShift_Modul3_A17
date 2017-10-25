@@ -30,5 +30,12 @@ if (act==2){
 
 int main(){
 while(1){
+pthread_create(&(thmenu)),NULL,&menu,NULL);
+pthread_create(&(thkurang1)),NULL,&kurang1,NULL);
+pthread_create(&(thkurang2)),NULL,&kurang2,NULL);
+pthread_create(&(thtambah)),NULL,&tambah,NULL);
 
+
+
+}
 
