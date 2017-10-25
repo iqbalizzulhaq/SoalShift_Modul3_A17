@@ -15,11 +15,11 @@ printf ("beri makan = ");
 scanf("%d",&act);
 }
 void *kurang1(){
-sleep(3);
+sleep(10);
 stat1 -=15;
 }
 void *kurang2(){
-sleep(3);
+sleep(20);
 stat2 -=20;
 }
 void *tambah(){
