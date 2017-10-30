@@ -4,17 +4,16 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<stdlib.h>
-int main()
+void *factorial(void *arg)
 {
-  int c, n, fact = 1;
- 
+  int i, n, fact = 1;
+
   printf("Enter a number to calculate it's factorial\n");
   scanf("%d", &n);
- 
-  for (c = 1; c <= n; c++)
-    fact = fact * c;
- 
+
+  for (i = 1; i <= n; c++)
+    fact = fact * i;
+
   printf("Factorial of %d = %d\n", n, fact);
- 
-  return 0;
 }
+

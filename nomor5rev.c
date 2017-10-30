@@ -4,34 +4,40 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include<stdlib.h>
-char kata[50];
-char string[60];
-int num=0;
 
 pthread_t tid[50];
 
-void *count(void *arg){
-	char **kata = (char**)arg;
+void *count(void *arg)
+{
+int num = 0;
+char string[1000];
+char *kata =(char*) arg;
 
 FILE *in;
-in = fopen("/home/asus/git/Novel.txt","r");
-scanf("%s",kata);
-while (fscanf(in,"%s",string)==1)
+in = fopen("Novel.txt","r");
+ while (fscanf(in,"%s",strings)!=EOF)
 {
-   if (strstr(string,kata)!=0){
-		num++;
-				}
 
+   if (strstr(strings,kata)!=NULL){
+	num++;
+   }
+}
 printf("%s %d\n",kata,num);
 fclose(in);
+
 }
 
-
 int main (int argc, char *argv[]){
-for (kata=1;kata<argc;kata++){
+int i;
+for (i=1;i<argc;i++){
 
- pthread_create(&tid[kata],NULL,count,(void*)argv;
- pthread_join(tid[kata],NULL);
-				}
+ pthread_create(&tid[i],NULL,&count,argv[i]);
+}
+
+for (i=1;i<argc;i++){
+
+ pthread_join(tid[i],NULL);
+}
+
 return 0;
 }
