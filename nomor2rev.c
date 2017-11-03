@@ -4,15 +4,16 @@
 #include<string.h>
 int poin1=0 ,poin2=0;
 int board1[4][4],board2[4][4];
-int kesempatan;
+int kesempatan=2;
 
 void* player1(void* arg)
 {
  int masukan,i,j,lubang=16,maen=4;
  memset(board1,0,sizeof(board1[0][0])*16);
-while (poin1<10 && poin2<10 && lubang!=0 && maen--){
-	printf("jumlah mine pemain1 = ");
-	scanf("%d",&masukan); maen-=masukan;
+while (1){
+	if(poin1<10 && poin2<10 && lubang!=0 && maen--)
+	{printf("jumlah mine pemain1 = ");
+	scanf("%d",&masukan); maen-=masukan;}
 	if (maen<0) masukan+=lubang;
 	
 	while(masukan--){
@@ -22,7 +23,7 @@ while (poin1<10 && poin2<10 && lubang!=0 && maen--){
 		else { printf("lubang sedang di proses\n");masukan ++;}
 
 	}
-	kesempatan=2;
+
 
 	while(kesempatan!=1){
 	if (poin1>=10 || poin2>=10)   break;
@@ -38,8 +39,7 @@ while (poin1<10 && poin2<10 && lubang!=0 && maen--){
 }
 	printf("p1%d p2%d\n",poin1,poin2);
 
-}	
-kesempatan=2;
+
 }
 int main(){
 
