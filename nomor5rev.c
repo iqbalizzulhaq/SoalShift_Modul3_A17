@@ -15,10 +15,10 @@ char *kata =(char*) arg;
 
 FILE *in;
 in = fopen("Novel.txt","r");
- while (fscanf(in,"%s",strings)!=EOF)
+ while (fscanf(in,"%s",string)!=EOF)
 {
 
-   if (strstr(strings,kata)!=NULL){
+   if (strstr(string,kata)!=NULL){
 	num++;
    }
 }
